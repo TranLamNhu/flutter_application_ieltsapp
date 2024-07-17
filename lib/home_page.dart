@@ -65,7 +65,16 @@ class HomePage extends StatelessWidget {
                         ],
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      child: const Text('Column 1, Row 1', textAlign: TextAlign.center),
+                      child: const Column(
+                        children: [
+                          Image(
+                            image: NetworkImage('https://via.placeholder.com/150'), // Replace with your image URL
+                            height: 100,
+                          ),
+                          SizedBox(height: 10),
+                          Text('Image 1', textAlign: TextAlign.center),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -92,7 +101,16 @@ class HomePage extends StatelessWidget {
                         ],
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      child: const Text('Column 2, Row 1', textAlign: TextAlign.center),
+                      child: const Column(
+                        children: [
+                          Image(
+                            image: NetworkImage('https://via.placeholder.com/150'), // Replace with your image URL
+                            height: 100,
+                          ),
+                          SizedBox(height: 10),
+                          Text('Image 2', textAlign: TextAlign.center),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -123,7 +141,16 @@ class HomePage extends StatelessWidget {
                         ],
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      child: const Text('Column 1, Row 2', textAlign: TextAlign.center),
+                      child: const Column(
+                        children: [
+                          Image(
+                            image: NetworkImage('https://via.placeholder.com/150'), // Replace with your image URL
+                            height: 100,
+                          ),
+                          SizedBox(height: 10),
+                          Text('Image 3', textAlign: TextAlign.center),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -150,7 +177,19 @@ class HomePage extends StatelessWidget {
                         ],
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      child: const Text('Column 2, Row 2', textAlign: TextAlign.center),
+                      child: const Column(
+                        children: [
+                          Image(
+                            image: AssetImage('assets/topic.png'), // Replace with your image URL
+                            height: 100,
+                          ),
+                          SizedBox(height: 10),
+                          Text('Topic', textAlign: TextAlign.center
+                         style: TextStyle(fontSize: 18),
+                          ),
+                         
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -179,5 +218,4 @@ class AnyPage extends StatelessWidget {
     );
   }
 }
-
 
