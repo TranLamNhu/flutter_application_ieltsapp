@@ -1,15 +1,16 @@
+
 import 'package:flutter/material.dart';
 import 'home_page.dart';
-import 'register_page.dart';
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+import 'login_page.dart';
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -18,13 +19,13 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('Register'),
         centerTitle: true,
         
         
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(16,70,16,60),
+        padding: const EdgeInsets.fromLTRB(16,70,16,60.0),
         child: Form(
           key: _formKey,
           child: Column(
@@ -34,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                 image: AssetImage('assets/logo.png'), 
                 height: 100,
               ), const Text(
-              'Welcome, Dolphin IELTS App',
+              'Dolphin IELTS App',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
               const SizedBox(height: 16), 
@@ -64,6 +65,20 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
+              const SizedBox(height: 16),
+              TextFormField(
+                controller: _passwordController,
+                decoration: const InputDecoration(
+                  labelText: 'Re-enter the password',
+                ),
+                obscureText: true,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your Re-Enterpassword';
+                  }
+                  return null;
+                },
+              ),
              const SizedBox(height: 32),
               SizedBox(
                 
@@ -80,13 +95,13 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>  const HomePage(),
+                          builder: (context) =>   const HomePage(),
                         ),
                       );
                     }
                   },
                 
-                child: const Text('Login'),
+                child: const Text('Register'),
               ),
               ),
               const SizedBox(height: 16),
@@ -99,11 +114,11 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const RegisterPage(),
+                          builder: (context) => const LoginPage(),
                         ),
                       );
                     },
-                    child: const Text('Register',
+                    child: const Text('Login',
                     style: TextStyle( color: Colors.red),
                     ),
                   ),
@@ -116,6 +131,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-
 
